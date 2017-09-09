@@ -4,7 +4,7 @@ Function.prototype.extends = function (fn) {
         var obj
         obj = fn.prototype
     } else {
-        obj = fn
+        obj = fn.n.prototype
     }
     for (var key in obj) {
         this.prototype[key] = obj[key]
