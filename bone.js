@@ -13,6 +13,8 @@ Function.prototype.extends = function (fn) {
 }
 
 function Event() {
+    var arg = arguments
+    var name = arguments[0]
     this.callback = {}
 }
 
@@ -27,8 +29,7 @@ Event.prototype.off = function (type) {
 }
 
 Event.prototype.trigger = function (type) {
-    var arg = arguments
-    var name = arguments[0]
+    
     Array.prototype.shift.call(arg)
     var fns = this.callback[name]
     var that = this
