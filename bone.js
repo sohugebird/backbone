@@ -18,15 +18,7 @@ function Event() {
     this.callback = {}
 }
 
-Event.prototype.on = function (type, cb) {
-    var obj
-    this.callback[type] = this.callback[type] || []
-    this.callback[type].push(cb)
-}
 
-Event.prototype.off = function (type) {
-    delete this.callback[type]
-}
 
 Event.prototype.trigger = function (type) {
     
@@ -38,10 +30,7 @@ Event.prototype.trigger = function (type) {
     })
 }
 
-var Model = function (obj) {
-    Event.call(this)
-    this.obj = obj
-}
+
 Model.extends(Event)
 Model.prototype.set = function (key, value) {
     var oldValue = this.obj[key]
