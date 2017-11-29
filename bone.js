@@ -105,7 +105,7 @@ Collection.prototype.reset = function (json) {
         model.parent = this
         this.json.push(model)
     }
-    this.trigger('reset', json)
+  
 }
 
 
