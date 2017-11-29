@@ -99,14 +99,4 @@ Collection.prototype.get = function (id) {
     return null
 }
 
-Collection.prototype.reset = function (json) {
-    for (var i = 0; i < json.length; i++) {
-        var model = new Model(json[i])
-        model.parent = this
-        this.json.push(model)
-    }
-  
-}
-
-
 Collection.extends(Event)
